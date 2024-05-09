@@ -1,7 +1,11 @@
 const express = require('express');
 const https = require('https');
+const cors = require('cors'); // Import the CORS middleware
 
 const app = express();
+
+// Middleware to enable CORS for all requests
+app.use(cors());
 
 // Function to make a request with TLS certificate validation ignored
 function makeRequest(url, options) {
